@@ -18,72 +18,71 @@ flutter build web --release
 
 This creates a production build in `build/web/`
 
-### Step 2: Deploy to Netlify
+### Step 2: Deploy to Cloudflare Pages (or Netlify)
 
-**Option A: Netlify CLI (Recommended)**
+#### Option A: Cloudflare Pages (Recommended)
 
-```bash
-# Install Netlify CLI
-npm install -g netlify-cli
+**Via Git Integration (Highly Recommended):**
+1. Push your code to GitHub/GitLab.
+2. Go to the Cloudflare Dashboard → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**.
+3. Select your repository.
+4. Set up the build settings:
+   - **Framework preset**: `None` (or `Flutter` if available)
+   - **Build command**: `flutter build web --release`
+   - **Build output directory**: `build/web`
+5. Click **Save and Deploy**.
+6. Cloudflare will automatically build and deploy your site, and compile the proxy function located in `functions/api/contact.js`.
 
-# Login to Netlify
-netlify login
+**Via Wrangler CLI (Direct Upload):**
+1. Install Wrangler CLI: `npm install -g wrangler`
+2. Login to Cloudflare: `npx wrangler login`
+3. Build the Flutter app: `flutter build web --release`
+4. Deploy the folder: `npx wrangler pages deploy build/web --project-name=your-project-name`
+   *(This also uploads the copy of Pages Functions located at `build/web/functions/api/contact.js`)*
 
-# Deploy
-netlify deploy --prod --dir=build/web
-```
+#### Option B: Netlify
 
-**Option B: Netlify Web Interface**
-
+**Via Netlify Web Interface:**
 1. Go to https://app.netlify.com
 2. Click "Add new site" → "Deploy manually"
-3. Drag and drop the `build/web` folder
-4. Your site will be live at `https://your-site-name.netlify.app`
-
-**Option C: Connect Git Repository**
-
-1. Push your code to GitHub/GitLab/Bitbucket
-2. In Netlify, click "Add new site" → "Import an existing project"
-3. Connect your repository
-4. Build settings:
-   - **Build command**: `flutter build web --release`
-   - **Publish directory**: `build/web`
-5. Click "Deploy site"
+3. Drag and drop the `build/web` folder.
+4. Your site will be live at `https://your-site-name.netlify.app`.
 
 ### Step 3: Environment Configuration
 
 The app automatically detects the environment:
-- **Production (Netlify)**: Uses `/.netlify/functions/contact` proxy
+- **Cloudflare Pages (Production)**: Uses `/api/contact` proxy (routes to Cloudflare Pages Function proxy)
+- **Netlify (Production)**: Uses `/.netlify/functions/contact` proxy
 - **Local Development**: Uses direct API with SSL bypass
-- **Native Apps**: Uses IOClient with SSL bypass
+- **Native Apps**: Uses `IOClient` with SSL bypass
 
 ## How It Works
 
-### For Web Deployment (Netlify)
-
+### For Cloudflare Pages
 ```
-User Browser → Netlify → Serverless Function → Your API
+User Browser → Cloudflare Pages → Pages Function (/api/contact) → Upstream API (CORS Bypass)
 ```
+The Cloudflare Pages Function at `functions/api/contact.js` (or `build/web/functions/api/contact.js`) acts as a proxy:
+- Resolves CORS blocks by returning proper CORS headers (`Access-Control-Allow-Origin: *`).
+- Makes a server-to-server request to the upstream Flask API, bypassing the browser's CORS/SSL restrictions.
 
-The Netlify serverless function at `netlify/functions/contact.js` acts as a proxy:
-- Handles CORS
-- Bypasses SSL certificate verification server-side
-- Returns response to your Flutter app
+### For Netlify
+```
+User Browser → Netlify → Serverless Function (/.netlify/functions/contact) → Upstream API
+```
 
 ### For Native Apps (iOS/Android/Desktop)
-
 ```
-App → Direct HTTPS Connection → Your API
+App → Direct HTTPS Connection → Upstream API
 ```
-
-Native apps can bypass SSL verification using `IOClient`.
+Native apps can bypass SSL verification natively in Dart using `IOClient`.
 
 ## Testing After Deployment
 
-1. Visit your Netlify URL: `https://your-site-name.netlify.app`
-2. Navigate to the Contact page
-3. Fill out the form
-4. Submit and verify it works
+1. Visit your Cloudflare Pages URL (e.g. `https://your-project.pages.dev` or custom domain).
+2. Go to the **Contact** page.
+3. Fill out and submit the form.
+4. Verify success states and that emails/leads are sent successfully!
 
 ## Troubleshooting
 
