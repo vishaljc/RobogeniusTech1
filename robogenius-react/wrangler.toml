@@ -6,3 +6,11 @@ compatibility_flags = ["nodejs_compat"]
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
+
+[vars]
+SMTP_HOST = "smtp.gmail.com"
+SMTP_PORT = "465"
+SMTP_SECURE = "true"
+SMTP_USER = "ksbot22@gmail.com"
+SMTP_FROM_EMAIL = "ksbot22@gmail.com"
+
