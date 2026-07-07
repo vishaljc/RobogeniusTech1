@@ -11,17 +11,17 @@ export function Footer() {
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-button-gradient shadow-[0_4px_12px_rgba(255,205,117,0.3)]">
-                <Bot className="h-5 w-5 text-white" />
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-button-gradient shadow-[0_4px_12px_rgba(217,119,6,0.2)] dark:shadow-[0_4px_12px_rgba(245,158,11,0.25)]">
+                <Bot className="h-5 w-5 text-white dark:text-zinc-950" />
               </div>
               <span className="text-gradient text-lg font-extrabold">
                 RoboGenius Tech
               </span>
             </div>
             <p className="text-sm leading-relaxed text-[var(--text-secondary)] max-w-sm">
-              Transforming businesses with intelligent robotic automation. We build the future of work — today.
+              Transforming businesses with intelligent robotic process automation LLP. We build the future of work — today.
             </p>
-            <div className="inline-block rounded-md border border-[var(--neon-blue)]/35 px-3.5 py-1.5 text-xs font-semibold text-[var(--neon-blue)]">
+            <div className="inline-block rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/5 px-3.5 py-1 text-xs font-semibold text-[var(--neon-blue)] tracking-wide">
               🤖 Automating the World
             </div>
           </div>

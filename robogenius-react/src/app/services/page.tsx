@@ -125,18 +125,18 @@ export default function Services() {
     <div className="w-full relative overflow-x-hidden flex flex-col">
       
       {/* --- HERO SECTION --- */}
-      <section className="relative w-full py-16 md:py-24 px-6 md:px-20 bg-hero-gradient border-b border-[var(--border)]">
-        <div className="absolute top-[-10%] left-[-10%] h-[350px] w-[350px] rounded-full bg-[var(--neon-blue)]/8 blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-[10%] right-[-10%] h-[350px] w-[350px] rounded-full bg-[var(--neon-purple)]/8 blur-[100px] pointer-events-none" />
+      <section className="relative w-full py-16 md:py-24 px-6 md:px-20 bg-hero-gradient border-b border-stone-200 dark:border-stone-900">
+        <div className="absolute top-[-10%] left-[-10%] h-[350px] w-[350px] rounded-full bg-[var(--primary)]/5 blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-[10%] right-[-10%] h-[350px] w-[350px] rounded-full bg-[var(--primary)]/5 blur-[100px] pointer-events-none" />
 
         <div className="mx-auto max-w-4xl text-center space-y-6 z-10">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2.5 rounded-full border border-[var(--neon-blue)]/30 bg-gradient-to-r from-[var(--neon-blue)]/12 to-[var(--neon-purple)]/12 px-4 py-1.5 mx-auto"
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/5 px-4 py-1.5 mx-auto"
           >
-            <span className="text-xs font-bold tracking-wide text-[var(--neon-blue)] uppercase">
-              ⚙️ OUR SERVICES
+            <span className="text-[10px] sm:text-xs font-bold tracking-[0.08em] text-[var(--neon-blue)] uppercase">
+              OUR SERVICES
             </span>
           </motion.div>
 
@@ -144,7 +144,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1] text-[var(--text-primary)]"
+            className="text-4xl md:text-6xl font-black font-heading tracking-tight leading-[1.1] text-[var(--text-primary)]"
           >
             Complete Digital<br />
             <span className="text-gradient">
@@ -156,7 +156,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base md:text-lg leading-relaxed text-[var(--text-secondary)] max-w-2xl mx-auto"
+            className="text-base md:text-lg leading-relaxed text-stone-600 dark:text-stone-400 max-w-2xl mx-auto text-wrap"
           >
             From robotic process automation to full-stack development — we provide end-to-end technology services that digitise, automate, and accelerate your business.
           </motion.p>
@@ -164,45 +164,44 @@ export default function Services() {
       </section>
 
       {/* --- FEATURED RPA SERVICE SECTION --- */}
-      <section className="w-full py-12 md:py-16 px-6 md:px-20 bg-[var(--background)]">
+      <section className="w-full py-16 md:py-20 px-6 md:px-20 bg-[var(--background)]">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-3xl glass-panel p-8 md:p-16 relative overflow-hidden shadow-2xl border-t-2 border-t-[var(--neon-blue)]/40 hover:bg-white/[0.04] dark:hover:bg-white/[0.04] transition-all duration-300">
-            <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+          <div className="rounded-3xl glass-panel p-8 md:p-16 relative overflow-hidden shadow-2xl border-t border-t-[var(--primary)]/30 hover:bg-white/[0.04] dark:hover:bg-white/[0.04] transition-all duration-300">
+            <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
               
               {/* Featured Left Content */}
               <div className="lg:col-span-7 space-y-6 text-left">
-                <div className="inline-flex items-center gap-2.5 rounded-md border border-[var(--neon-blue)]/30 bg-[var(--neon-blue)]/15 px-3 py-1">
-                  <span className="text-xs font-bold tracking-widest text-[var(--neon-blue)] uppercase">
-                    🌟 FEATURED SERVICE
+                <div className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/5 px-3 py-1">
+                  <span className="text-[10px] font-bold tracking-[0.08em] text-[var(--neon-blue)] uppercase">
+                    FEATURED SERVICE
                   </span>
                 </div>
 
-                <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text-primary)] leading-tight">
+                <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-[var(--text-primary)] leading-tight">
                   Robotic Process Automation
                 </h2>
 
-                <p className="text-sm md:text-base leading-relaxed text-[var(--text-secondary)]">
+                <p className="text-sm md:text-base leading-relaxed text-stone-600 dark:text-stone-400">
                   Our RPA solutions deploy intelligent software bots that replicate human actions across digital systems. From data entry to complex workflows, we automate end-to-end processes with precision, speed, and zero errors — freeing your workforce for high-value strategic work.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   {services[0].benefits.map((b) => (
-                    <div key={b} className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
+                    <div key={b} className="flex items-center gap-2 text-xs text-stone-600 dark:text-stone-400">
                       <CheckCircle2 className="h-4.5 w-4.5 text-[var(--neon-cyan)] shrink-0" />
                       <span>{b}</span>
                     </div>
                   ))}
                 </div>
 
-
               </div>
 
               {/* Featured Right Visual Flow */}
-              <div className="lg:col-span-5 h-[360px] relative rounded-3xl glass-panel flex items-center justify-center p-6 select-none">
+              <div className="lg:col-span-5 h-[360px] relative rounded-3xl glass-panel flex items-center justify-center p-6 select-none border-stone-200 dark:border-stone-850 shadow-sm bg-[var(--surface-light)]/40">
                 {/* SVG Connections */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ stroke: 'rgba(255,205,117,0.2)', strokeWidth: 1.5 }}>
+                <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ stroke: 'rgba(217,119,6,0.18)', strokeWidth: 1.5 }}>
                   <line x1="50%" y1="50%" x2="50%" y2="10%" />
                   <line x1="50%" y1="50%" x2="90%" y2="35%" />
                   <line x1="50%" y1="50%" x2="90%" y2="65%" />
@@ -211,11 +210,11 @@ export default function Services() {
                   <line x1="50%" y1="50%" x2="10%" y2="35%" />
 
                   {/* Ring lines */}
-                  <polygon points="50%,10% 90%,35% 90%,65% 50%,90% 10%,65% 10%,35%" fill="none" stroke="rgba(255,205,117,0.25)" />
+                  <polygon points="50%,10% 90%,35% 90%,65% 50%,90% 10%,65% 10%,35%" fill="none" stroke="rgba(217,119,6,0.2)" />
                 </svg>
 
                 {/* Central Hub */}
-                <div className="h-[76px] w-[76px] rounded-full bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] flex flex-col items-center justify-center text-white border border-[var(--neon-blue)]/50 shadow-[0_0_24px_rgba(255,205,117,0.4)] z-10 text-center">
+                <div className="h-[76px] w-[76px] rounded-full bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-purple)] flex flex-col items-center justify-center text-white border border-[var(--primary)]/45 shadow-[0_0_24px_rgba(217,119,6,0.35)] z-10 text-center">
                   <span className="text-[11px] font-black leading-none">RPA</span>
                   <span className="text-[11px] font-black leading-none">Core</span>
                 </div>
@@ -224,10 +223,10 @@ export default function Services() {
                 {rpaNodes.map((n) => (
                   <div 
                     key={n.label}
-                    className="absolute h-14 w-14 rounded-full glass-panel flex flex-col items-center justify-center z-10 transition-all duration-300 hover:scale-110 border-[var(--neon-blue)]/30"
+                    className="absolute h-14 w-14 rounded-full glass-panel flex flex-col items-center justify-center z-10 transition-all duration-300 hover:scale-110 border-[var(--primary)]/20 shadow-sm bg-[var(--card)]"
                     style={{ left: n.x, top: n.y, transform: 'translate(-50%, -50%)' }}
                   >
-                    <span className="text-xs font-bold text-[var(--text-secondary)]">{n.label}</span>
+                    <span className="text-xs font-bold text-stone-600 dark:text-stone-300">{n.label}</span>
                   </div>
                 ))}
               </div>
@@ -238,16 +237,18 @@ export default function Services() {
       </section>
 
       {/* --- ALL SERVICES Alternating List --- */}
-      <section className="w-full py-12 md:py-16 px-6 md:px-20 bg-gradient-to-b from-[var(--background)] to-[var(--surface-light)] border-b border-[var(--border)]">
+      <section className="w-full py-16 px-6 md:px-20 bg-gradient-to-b from-[var(--background)] to-[var(--surface-light)] border-b border-stone-200 dark:border-stone-900">
         <div className="mx-auto max-w-7xl">
           <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
-            <div className="inline-block rounded-md border border-[var(--neon-blue)]/20 px-3 py-1 text-xs font-bold text-[var(--neon-blue)] uppercase tracking-wide">
-              🛠 ALL SERVICES
+            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/5 px-3 py-1">
+              <span className="text-[10px] sm:text-xs font-bold tracking-[0.08em] text-[var(--neon-blue)] uppercase">
+                ALL SERVICES
+              </span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight text-[var(--text-primary)]">
+            <h2 className="text-3xl md:text-5xl font-extrabold font-heading leading-tight text-[var(--text-primary)]">
               Everything You Need<br />to Digitise & Automate
             </h2>
-            <p className="text-sm md:text-base text-[var(--text-secondary)]">
+            <p className="text-sm md:text-base text-stone-600 dark:text-stone-400">
               A comprehensive portfolio of technology services designed for the digital-first enterprise.
             </p>
           </div>
@@ -265,24 +266,24 @@ export default function Services() {
                   transition={{ duration: 0.6 }}
                   className={`flex flex-col lg:flex-row items-center gap-10 p-8 md:p-12 rounded-3xl glass-panel glass-panel-hover group ${
                     isEven ? '' : 'lg:flex-row-reverse'
-                  }`}
+                  } border-stone-200 dark:border-stone-800`}
                 >
                   {/* Service Graphic/Icon Card */}
-                  <div className="flex-shrink-0 w-24 h-24 rounded-2xl bg-gradient-to-br from-[var(--neon-blue)]/15 to-[var(--neon-purple)]/10 text-[var(--neon-blue)] flex items-center justify-center group-hover:bg-white group-hover:text-zinc-950 transition-all duration-300 shadow-md">
-                    <Icon className="h-10 w-10" />
+                  <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-[var(--primary)]/8 text-[var(--neon-blue)] flex items-center justify-center border border-[var(--primary)]/15 group-hover:bg-button-gradient group-hover:text-white transition-all duration-300 shadow-sm">
+                    <Icon className="h-8 w-8" />
                   </div>
 
                   {/* Service Details */}
                   <div className="flex-1 space-y-4 text-left">
                     {svc.isHighlight && (
-                      <span className="inline-block text-[10px] font-black tracking-widest text-[var(--neon-blue)] bg-[var(--neon-blue)]/12 rounded px-2.5 py-1">
-                        ⭐ FLAGSHIP SERVICE
+                      <span className="inline-flex text-[9px] font-black tracking-[0.08em] text-[var(--neon-blue)] bg-[var(--primary)]/8 border border-[var(--primary)]/12 rounded-full px-2.5 py-0.5 uppercase">
+                        FLAGSHIP SERVICE
                       </span>
                     )}
-                    <h3 className="text-2xl font-bold text-[var(--text-primary)]">
+                    <h3 className="text-2xl font-bold font-heading text-[var(--text-primary)] group-hover:text-[var(--neon-blue)] transition-colors">
                       {svc.title}
                     </h3>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                       {svc.fullDescription}
                     </p>
 
@@ -290,7 +291,7 @@ export default function Services() {
                       {svc.benefits.map((b) => (
                         <span 
                           key={b} 
-                          className="text-xs text-[var(--text-secondary)] bg-[var(--neon-purple)]/8 border border-[var(--neon-purple)]/15 rounded-md px-3 py-1.5"
+                          className="text-xs text-stone-600 dark:text-stone-300 bg-[var(--primary)]/5 border border-[var(--primary)]/12 rounded-full px-3.5 py-1 tracking-wide"
                         >
                           {b}
                         </span>
@@ -304,22 +305,24 @@ export default function Services() {
         </div>
       </section>
 
-      {/* --- PROCESS SECTION --- */}
-      <section className="w-full py-12 md:py-16 px-6 md:px-20 bg-[var(--background)]">
+      {/* --- PROCESS SECTION (NO CARDS, CLEAN HORIZONTAL STEP ROW) --- */}
+      <section className="w-full py-16 md:py-24 px-6 md:px-20 bg-[var(--background)]">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <div className="inline-block rounded-md border border-[var(--neon-blue)]/20 px-3 py-1 text-xs font-bold text-[var(--neon-blue)] uppercase tracking-wide">
-              🚀 OUR PROCESS
+          <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/5 px-3 py-1">
+              <span className="text-[10px] sm:text-xs font-bold tracking-[0.08em] text-[var(--neon-blue)] uppercase">
+                OUR PROCESS
+              </span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight text-[var(--text-primary)]">
+            <h2 className="text-3xl md:text-5xl font-extrabold font-heading leading-tight text-[var(--text-primary)]">
               From Concept to<br />Live Automation
             </h2>
-            <p className="text-sm md:text-base text-[var(--text-secondary)]">
+            <p className="text-sm md:text-base text-stone-600 dark:text-stone-400">
               A proven 4-step methodology that delivers working automations in weeks, not months.
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, i) => {
               const Icon = step.icon
               return (
@@ -329,20 +332,25 @@ export default function Services() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 * i }}
-                  className="flex flex-col text-left p-8 rounded-3xl glass-panel glass-panel-hover group"
+                  className="flex flex-col text-left space-y-4 group"
                 >
-                  <span className="text-gradient text-4xl font-extrabold mb-4 leading-none">
-                    {step.step}
-                  </span>
-                  <div className="h-10 w-10 rounded-lg flex items-center justify-center bg-[var(--neon-blue)]/10 text-[var(--neon-blue)] mb-4 group-hover:bg-white group-hover:text-zinc-950 transition-all duration-300">
-                    <Icon className="h-5 w-5" />
+                  {/* Top Line & Number */}
+                  <div className="w-full pt-4 border-t border-stone-200 dark:border-stone-800 flex justify-between items-start">
+                    <span className="text-gradient text-4xl font-extrabold font-heading leading-none">
+                      {step.step}
+                    </span>
+                    <div className="h-8 w-8 rounded-lg flex items-center justify-center bg-[var(--primary)]/8 text-[var(--neon-blue)] group-hover:bg-button-gradient group-hover:text-white transition-all duration-300 border border-[var(--primary)]/10">
+                      <Icon className="h-4.5 w-4.5" />
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                    {step.desc}
-                  </p>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--neon-blue)] transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
                 </motion.div>
               )
             })}

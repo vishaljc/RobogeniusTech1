@@ -47,18 +47,18 @@ export function Navbar() {
         damping: 30,
         mass: 0.8
       }}
-      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl border bg-white/75 dark:bg-zinc-950/60 backdrop-blur-xl transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] border-zinc-200 dark:border-white/10 hover:border-amber-500/30 dark:hover:border-[#ffcd75]/35 overflow-hidden ${
+      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl border bg-[var(--card)] backdrop-blur-xl transition-all duration-500 shadow-[0_10px_40px_-10px_rgba(217,119,6,0.05)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.4)] border-stone-200 dark:border-stone-800 hover:border-amber-500/30 dark:hover:border-amber-500/35 overflow-hidden ${
         mobileMenuOpen ? 'rounded-[32px]' : 'rounded-full'
       }`}
     >
       <div className="flex h-14 items-center justify-between px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-button-gradient shadow-[0_4px_12px_rgba(194,122,0,0.2)] dark:shadow-[0_4px_12px_rgba(255,205,117,0.3)]">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-button-gradient shadow-[0_4px_12px_rgba(217,119,6,0.2)] dark:shadow-[0_4px_12px_rgba(245,158,11,0.25)]">
             <Bot className="h-5 w-5 text-white dark:text-zinc-950" />
           </div>
           <span className="text-gradient text-lg font-extrabold tracking-tight">
-            RoboGenius Tech
+             RoboGenius Tech
           </span>
         </Link>
 
@@ -79,14 +79,14 @@ export function Navbar() {
                 className={`relative px-4 py-1.5 text-sm font-semibold transition-colors duration-300 rounded-full cursor-pointer z-10 ${
                   isCurrent 
                     ? 'text-white dark:text-zinc-950' 
-                    : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                    : 'text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white'
                 }`}
               >
                 {/* Liquid sliding pill indicator */}
                 {isCurrent && (
                   <motion.div
                     layoutId="navbar-active-pill"
-                    className="absolute inset-0 bg-gradient-to-r from-zinc-950 to-[#c27a00] dark:from-white dark:to-[#ffcd75] rounded-full -z-10 shadow-[0_2px_10px_rgba(194,122,0,0.15)] dark:shadow-[0_2px_10px_rgba(255,205,117,0.2)]"
+                    className="absolute inset-0 bg-gradient-to-r from-amber-600 to-amber-500 dark:from-amber-500 dark:to-yellow-500 rounded-full -z-10 shadow-[0_4px_12px_rgba(217,119,6,0.2)]"
                     transition={{
                       type: 'spring',
                       stiffness: 380,
@@ -120,7 +120,7 @@ export function Navbar() {
 
           {/* Contact CTA */}
           <Link href="/contact" className="hidden md:block">
-            <Button className="bg-zinc-950 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 rounded-full font-semibold transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-1.5 cursor-pointer shadow-[0_4px_12px_rgba(0,0,0,0.1)] dark:shadow-none">
+            <Button className="bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--foreground)]/90 rounded-full font-semibold transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-1.5 cursor-pointer shadow-[0_4px_12px_rgba(217,119,6,0.15)]">
               Get Assessment
               <ArrowRight className="h-4 w-4" />
             </Button>
@@ -151,7 +151,7 @@ export function Navbar() {
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className="md:hidden px-6 pb-6 overflow-hidden"
           >
-            <nav className="flex flex-col gap-3.5 pt-2 border-t border-zinc-200 dark:border-white/5">
+            <nav className="flex flex-col gap-3.5 pt-2 border-t border-stone-200 dark:border-stone-800">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -160,7 +160,7 @@ export function Navbar() {
                   className={`text-sm font-semibold py-2 transition-colors ${
                     activeLink(link.href)
                       ? 'text-[var(--neon-blue)]'
-                      : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                      : 'text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white'
                   }`}
                 >
                   {link.name}
@@ -171,7 +171,7 @@ export function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-2"
               >
-                <Button className="w-full bg-zinc-950 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 rounded-full font-semibold flex items-center justify-center gap-2">
+                <Button className="w-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--foreground)]/90 rounded-full font-semibold flex items-center justify-center gap-2">
                   Get Assessment
                   <ArrowRight className="h-4 w-4" />
                 </Button>
