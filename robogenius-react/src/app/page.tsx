@@ -212,10 +212,10 @@ export default function Home() {
           
           {/* --- LEFT COLUMN --- */}
           <div 
-            className={`transition-all duration-1000 ease-in-out flex flex-col justify-center space-y-8 pt-8 pointer-events-auto ${
+            className={`transition-all duration-1000 ease-in-out flex flex-col justify-center space-y-8 pt-8 pointer-events-auto text-left items-start ${
               robotLoaded 
-                ? 'lg:col-span-7 text-left items-start' 
-                : 'lg:col-span-12 text-center items-center max-w-3xl mx-auto'
+                ? 'lg:col-span-7 lg:text-left lg:items-start' 
+                : 'lg:col-span-12 lg:text-center lg:items-center max-w-3xl lg:mx-auto'
             }`}
           >
             
@@ -241,16 +241,16 @@ export default function Home() {
             </h1>
 
             {/* Description */}
-            <p className={`animate-fade-slide-in delay-300 max-w-xl text-base sm:text-lg text-stone-600 dark:text-stone-400 leading-relaxed text-wrap transition-all duration-1000 ${
-              robotLoaded ? 'text-left' : 'text-center'
+            <p className={`animate-fade-slide-in delay-300 max-w-xl text-base sm:text-lg text-stone-600 dark:text-stone-400 leading-relaxed text-wrap transition-all duration-1000 text-left ${
+              robotLoaded ? 'lg:text-left' : 'lg:text-center lg:mx-auto'
             }`}>
               Deploy intelligent software robots that automate complex business processes, 
               eliminate errors, and accelerate digital transformation — at scale.
             </p>
 
             {/* CTA Buttons */}
-            <div className={`animate-fade-slide-in delay-400 flex flex-col sm:flex-row gap-4 transition-all duration-1000 ${
-              robotLoaded ? 'justify-start' : 'justify-center'
+            <div className={`animate-fade-slide-in delay-400 flex flex-col sm:flex-row gap-4 transition-all duration-1000 justify-start ${
+              robotLoaded ? 'lg:justify-start' : 'lg:justify-center'
             }`}>
               <Link href="/services">
                 <Button className="group bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--foreground)]/90 font-bold h-14 px-8 flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(217,119,6,0.18)] rounded-full cursor-pointer transition-all hover:scale-[1.02] active:scale-[0.98]">
@@ -269,19 +269,6 @@ export default function Home() {
 
           {/* --- RIGHT COLUMN --- */}
           <div className="lg:col-span-5 h-[200px] lg:h-full relative pointer-events-none hidden lg:block" />
-          
-          {/* Mobile Spline Card */}
-          <div className="block lg:hidden w-full h-[300px] relative rounded-3xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-stone-100 dark:bg-stone-950 pointer-events-auto">
-            <Spotlight
-              className="-top-20 left-0"
-              fill="var(--neon-blue)"
-            />
-            <SplineScene 
-              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-              className="w-full h-full"
-              onLoad={() => setRobotLoaded(true)}
-            />
-          </div>
         </div>
       </section>
 
